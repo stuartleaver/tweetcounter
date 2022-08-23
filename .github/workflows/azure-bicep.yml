@@ -1,10 +1,4 @@
-on:
-  [push]
-    # branches:
-    #   - main
-    paths:
-      - '!/**'
-      - 'iac/**'
+on: [push]
 name: Infrastructure - Bicep
 jobs:
   build-and-deploy:
