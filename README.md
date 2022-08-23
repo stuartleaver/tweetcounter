@@ -22,7 +22,8 @@ The infrastructure in this repo is deployed via GitHub Actions. While you could 
 The resources for this application are created using [Bicep](https://docs.microsoft.com/en-us/azure/azure-resource-manager/bicep/overview?tabs=bicep)
 
 ### GitHub Action
-To be able to deploy the Bicep file via a GitHub Action, you will need to carry out a couple of steps. Microsoft has documentation on this, so the links are:
+To be able to deploy the Bicep file via a GitHub Action, you will need to carry out a couple of steps. Microsoft has documentation on this, so the links are below. Note that when running the `az  ad sp create-for-rbac` command, you may need to substritute `owner` for `contributer` due to the Bicep file needing write permissions on role assignments. If there is a better way of doing this, feel free to contribute to this repo.
+
 1. [Generate deployment credentials](https://docs.microsoft.com/en-us/azure/azure-resource-manager/bicep/deploy-github-actions?tabs=userlevel%2CCLI#generate-deployment-credentials)
 1. [Configure the GitHub secrets](https://docs.microsoft.com/en-us/azure/azure-resource-manager/bicep/deploy-github-actions?tabs=userlevel%2CCLI#configure-the-github-secrets)
 
