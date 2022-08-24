@@ -21,8 +21,8 @@ This repo deploys the main.bicep file through a GitHub Action, but you can also 
 The infrastructure in this repo is deployed via GitHub Actions. While you could also do the same, it is also possible to just run 
 The resources for this application are created using [Bicep](https://docs.microsoft.com/en-us/azure/azure-resource-manager/bicep/overview?tabs=bicep)
 
-### GitHub Action
-To be able to deploy the Bicep file via a GitHub Action, you will need to carry out a couple of steps. Microsoft has documentation on this, so the links are below. Note that when running the `az  ad sp create-for-rbac` command, you may need to substritute `owner` for `contributer` due to the Bicep file needing write permissions on role assignments. If there is a better way of doing this, feel free to contribute to this repo.
+### Deploy with a GitHub Action
+To be able to deploy the Bicep file via a GitHub Action, you will need to carry out a couple of steps. Microsoft has documentation on this, so the links are below. Note that when running the `az ad sp create-for-rbac` command, you may need to substritute `owner` for `contributer` due to the Bicep file needing write permissions on role assignments. If there is a better way of doing this, feel free to contribute to this repo.
 
 1. [Generate deployment credentials](https://docs.microsoft.com/en-us/azure/azure-resource-manager/bicep/deploy-github-actions?tabs=userlevel%2CCLI#generate-deployment-credentials)
 1. [Configure the GitHub secrets](https://docs.microsoft.com/en-us/azure/azure-resource-manager/bicep/deploy-github-actions?tabs=userlevel%2CCLI#configure-the-github-secrets)
@@ -38,3 +38,9 @@ az deployment group create --resource-group tweetcounter --template-file main.bi
 ```
 
 Where secrets are involved, such as the Twitter API bearer token, these parameters are defined as secrets in the Bicep file. They will therefore not be saved in the deployment.
+
+### Application Deployment
+#### API
+There are multiple ways of deploying the API, but if you wish to use the same GitHub Action as in this repo, you will need to carry out the following steps:
+1. [Generate deployment credentials](https://docs.microsoft.com/en-us/azure/azure-functions/functions-how-to-github-actions?tabs=dotnet#generate-deployment-credentials)
+1. Make changes to the three env variables if required based on your setup.

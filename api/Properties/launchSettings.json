@@ -1,0 +1,9 @@
+{
+  "profiles": {
+    "TweetCounter.Api": {
+      "commandName": "Project",
+      "commandLineArgs": "--port 7100",
+      "launchBrowser": false
+    }
+  }
+}
