@@ -1,7 +1,12 @@
-name: Application - API
-
 on:
-  [push]
+  push:
+    branches:
+      - main
+    paths:
+    - '!/**'
+    - 'api/**'
+
+name: Application - API
 
 env:
   AZURE_FUNCTIONAPP_NAME: tweetcounterprgt6gxfgn2w6
